@@ -15,3 +15,6 @@ allowing the user to switch between font types and stuff
 
 This is a helper python script for easily working with XFA objects within pikepdf. 
 
+## Additional Python Library Dependencies
+
+BeautifulSoup and pikepdf
