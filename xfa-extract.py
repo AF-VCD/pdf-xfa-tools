@@ -4,6 +4,17 @@ import os
 import re
 from xfaTools import XfaObj
 
+
+if(len(sys.argv) == 1 or re.match(r'(^-+h)',sys.argv[1]) ):
+    print(f'''
+USAGE: 
+
+    python {os.path.basename(sys.argv[0])} 'PATH_TO_PDF.pdf' [... MORE_PDFS.pdf ]
+  
+        Output will be saved to a folder called PATH_TO_PDF (for each pdf) in the current working directory
+    ''')
+    quit()
+
 fileNames = sys.argv
 
 # starting from 1 because the 0th arg is the file name of this script
