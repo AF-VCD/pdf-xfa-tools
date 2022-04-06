@@ -52,7 +52,9 @@ for fileName in fileNames[1:]:
             if(tag.find('textEdit')):
                 if(re.match(personalDataTagRegex,tag['name'])):
                     personalDataTags.append(tag['name'])
-            
+            if(tag.find('textEdit')):
+                text = tag.find('textEdit')
+                text['vScrollPolicy'] = 'auto'
             # make the field visible and editable
             tag['access'] = 'open'
             tag['presence'] = 'visible'
@@ -69,7 +71,8 @@ for fileName in fileNames[1:]:
         dataSoup = BeautifulSoup(xfaDict['datasets'],'xml')
         for tagName in personalDataTags:
             tag = dataSoup.find(tagName)
-            if(tag):
+            if(tag): 
+                pass
                 # clear out any data in the tag
                 tag.contents = []
         
